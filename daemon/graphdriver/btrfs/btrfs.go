@@ -9,8 +9,8 @@ package btrfs // import "github.com/docker/docker/daemon/graphdriver/btrfs"
 
 #include <linux/version.h>
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4,12,0)
-    #error "Headers from kernel >= 4.12 are required to build with Btrfs support."
-    #error "HINT: Set 'DOCKER_BUILDTAGS=exclude_graphdriver_btrfs' to build without Btrfs."
+    #warning "Headers from kernel >= 4.12 are required to build with Btrfs support."
+    #warning "HINT: Set 'DOCKER_BUILDTAGS=exclude_graphdriver_btrfs' to build without Btrfs."
 #endif
 
 #include <linux/btrfs.h>
